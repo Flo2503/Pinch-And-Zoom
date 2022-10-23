@@ -41,10 +41,7 @@ struct ContentView: View {
                                 imageScale = 5
                             }
                         } else {
-                            withAnimation(.spring()) {
-                                imageScale = 1
-                            }
-                        }
+                            resetImageState()                         }
                     })
                 // MARK: - 2. DRAG GESTURE
                     .gesture(
@@ -56,7 +53,7 @@ struct ContentView: View {
                             }
                             .onEnded { _ in
                                 if imageScale <= 1 {
-                                    resetImageState() 
+                                    resetImageState()
                                 }
                             }
                     )
